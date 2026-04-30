@@ -14,9 +14,18 @@ const SignUpPage = () => {
     const {data, error} = await authClient.signUp.email({
       name: user.name,
       email: user.email,
-      password: user.password
+      password: user.password,
+      callbackURL: '/'
     })
     console.log("Sign up response:", { data, error });
+
+
+    if(error){
+      alert("Error signing up" + error.message)
+    }
+    if(data){
+      alert("Sign up successfull please check your email verify your account")
+    }
     // e.preventDefault();
     // const formData = new FormData(e.currentTarget);
     // const data = {};

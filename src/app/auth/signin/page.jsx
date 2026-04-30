@@ -16,13 +16,13 @@ const SighInPage = () => {
             email: user.email,
             password: user.password,
             rememberMe: true,
-            callbackURL: '/'
+            callbackURL: '/dashboard'
         })
         console.log('sign in response:', {data, error})
     }
 
     return (
-        <div>
+        <div className="w-1/3 mx-auto">
             <h2>Please Sign In</h2>
             <Form
                 className="flex w-96 flex-col gap-4"
